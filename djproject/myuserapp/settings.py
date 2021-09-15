@@ -31,7 +31,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["crime-dbms.herokuapp.com"]
+ALLOWED_HOSTS = ['.herokuapp.com']
 
 
 # Application definition

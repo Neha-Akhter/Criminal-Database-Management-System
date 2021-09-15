@@ -1,0 +1,85 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    overflow-y: scroll;
+}
+
+.cardhead {
+    height: 60px;
+    background-color: #206275ba;
+    text-align: center;
+}
+
+.h5,
+h5 {
+    top: 14px;
+    font-size: 1.25rem;
+    position: absolute;
+    left: 20px;
+    right: 20px;
+}
+
+.maincontainer {
+    position: absolute;
+    display: inline-block;
+
+    margin-top: 50px;
+    left: 30px;
+    right: 6px;
+}
+
+.inrow {
+    display: inline-block;
+    margin: 5px 18px 20px;
+    width: 22%;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.6rem 1rem;
+}
+
+.fa-paste:before {
+    content: "\f0ea";
+    margin-top: 23px;
+    display: flex;
+    position: absolute;
+    right: 5px;
+    color: #382f28;
+    font-size: xx-large;
+}
+.space{
+    right:9px;
+}
+.navitems {
+    
+    position: absolute;
+    right: 8px;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 211px;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 3rem;
+}
+
+.btn-group-sm>.btn, .btn-sm {
+    padding: .25rem .5rem;
+    font-size: 1.5rem;
+    width: 102px;
+    border-radius: .2rem;
+}
+.heading :hover{
+    text-decoration: underline;
+}

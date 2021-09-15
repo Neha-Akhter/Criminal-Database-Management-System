@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complains</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static "comrecords.css" %}">
+    <link rel="stylesheet" href="{% static "popupwindow.css" %}">
+    <link rel="stylesheet" href="{% static "toast.css" %}">
+
+
+
+</head>
+
+<body>
+    <header>
+        <h2 class="container">Complain Records</h2>
+        <hr>
+
+    </header>
+
+
+    <div id="snackbar">Record Deleted successfully</div>
+    <p class="report">Reported Generated on: <span id="time"></span></p>
+
+    <!--button for adding new record-->
+    <button class="add" onclick="togglePopup2()"> Add New Record <i class="px-1 fas fa-pencil-alt"></i></button>
+    <a href="/complainrecords_csv">
+        <button class="download"> Download Records<i class="fas fa-download"></i></button>
+    </a>
+
+    <!--popup window for adding new record-->
+    <div class="popup" id="popup-2">
+        <div class="overlay"></div>
+        <div class="contents">
+            <div class="close-btn" onclick="togglePopup2()">×</div>
+            <h4>Add New Record</h4>
+            <hr>
+            <form autocomplete="off" method="post" action="/addrecord">
+                <input type="hidden" autocomplete="False" name="" id="">
+                {% csrf_token %}
+                <input type='text' class="input-field" placeholder="Complainee First Name" name='complainee_fname'
+                    required>
+
+                <input type='text' class='input-field' placeholder="Complainee Last Name" name='complainee_lname'
+                    required>
+
+                <input type='email' class='input-field' placeholder="Email Id" required name="email_address">
+
+                <input type='number' class='input-field' placeholder="CNIC number" required name="complainee_cnic">
+
+                <input type='number' class='input-field' placeholder="Contact number" required
+                    name='complainee_contactno'>
+
+                <input class="input-field" name="crime_description" id="decs" placeholder="crime description" cols="10"
+                    rows="3" name="crime_description">
+
+                <input class="input-field" name="victim_description" id="decs" placeholder="Victim description"
+                    cols="10" rows="3">
+
+                <button type="submit" class="btn btn-primary save">Save
+                    Changes</button>
+            </form>
+            <a><button class="dontsave btn btn-primary" onclick="togglePopup2()">Cancel</button></a>
+
+        </div>
+    </div>
+
+    <!--table start-->
+    <div class="tbrow">
+
+        <div class="col-md-12">
+            <table class='table-hover table'>
+                <thead class='tablehead'>
+                    <tr>
+                        <th class="column">Complain ID</th>
+                        <th class="column">First name</th>
+                        <th class="column">Last name</th>
+                        <th class="column">Cnic</th>
+                        <th class="column">Contact No</th>
+                        <th class="column">Email Adress</th>
+                        <th class="column">Date of Complain</th>
+                        <th class="column">Time of Complain</th>
+                        <th class="column">FIR_status</th>
+                        <th class="column">Crime description</th>
+                        <th class="column">Victim description</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for i in complains %}
+                    <tr class="rows">
+                        <td>{{i.complain_id}}</td>
+                        <td>{{i.complainee_fname}}</td>
+                        <td>{{i.complainee_lname}}</td>
+                        <td>{{i.complainee_cnic}}</td>
+                        <td>{{i.complainee_contactno}}</td>
+                        <td>{{i.email_address}}</td>
+                        <td>{{i.dateofcomplain}}</td>
+                        <td>{{i.timeofcomplain}}</td>
+                        {%if i.FIR_status == False %}
+                        <td>not registered</td>
+                        {%else%}
+                        <td>registered</td>
+                        {%endif%}
+                        <td>{{i.crime_description}}</td>
+                        <td>{{i.victim_description}}</td>
+
+                        <td class="del">
+                            <a onclick="myFunction()" href="delete/{{i.complain_id}}"><button type="button"
+                                    class="btn btn-success">Delete</button>
+                            </a>
+
+                            <a href="update/{{i.complain_id}}"><button type="button"
+                                    class="btn btn-success">Update</button></a>
+
+                            <div class="popup" id="popup-1">
+                                <div class="overlay"></div>
+                                <div class="content">
+                                    <div class="close-btn" onclick="togglePopup()">×</div>
+                                    <hr>
+                                    <p>Are you sure you want to delete this record?</p>
+                                    {% comment %} <a href="delete/{{i.complain_id}}"><button
+                                            class="btn btn-primary ok">Yes</button></a> {% endcomment %}
+                                    <button class="cancel btn btn-primary" onclick="togglePopup()">Cancel</button>
+
+                                </div>
+                            </div>
+
+                        </td>
+                        {%endfor%}
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+    <script>
+        function togglePopup() {
+            document.getElementById("popup-1").classList.toggle("active");
+        }
+
+        function togglePopup2() {
+            document.getElementById("popup-2").classList.toggle("active");
+        }
+
+        function myFunction() {
+
+            var x = document.getElementById("snackbar");
+            x.className = "show";
+            setTimeout(function () {
+                x.className = x.className.replace("show", "");
+            }, 3000);
+        }
+
+        var today = new Date();
+
+        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+        var dateTime = date + ' ' + time;
+        document.getElementById("time").innerHTML = dateTime;
+    </script>
+
+
+</body>
+
+
+
+</html>

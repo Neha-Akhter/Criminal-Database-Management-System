@@ -1,0 +1,285 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: white;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.full-page {
+    height: 81%;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/static/bgimage.jpeg");
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.mmm{
+    color: rgb(230 229 229);
+    margin-top:5px;
+    text-decoration: underline;
+    /* background-color: blue; */
+    text-align: center;}
+
+
+/* css variables */
+:root {
+    --navbarheight: 59px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 46px;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    background-color: #000000;
+
+}
+
+.navbar ul {
+
+    font-family: 'font-family: sans-serif', 'cursive';
+    display: flex;
+}
+
+.navbar::before {
+    background-color: #633c3c;
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.navbar ul li {
+    list-style: none;
+    font-size: 17px;
+    text-decoration: underline;
+}
+
+.navbar ul li a {
+    color: white;
+    display: block;
+    padding: 3px 9px;
+    margin-left: 4px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-right: 4px;
+    border-radius: 15px;
+    text-decoration: none;
+}
+
+.navbar ul li a:hover {
+    color: rgb(107, 61, 61);
+
+}
+
+
+
+.heading {
+    font-size: 18px;
+    color: #ffbc71;
+    margin-right: 35px;
+}
+
+
+
+.form-box {
+    width: 380px;
+    overflow-y: scroll;
+    height: 610px;
+    margin: 2% auto;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    overflow: hidden;
+}
+
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: #F3C693;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+
+
+.input-group-register {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    width: 388px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 9px 0;
+    margin: 3px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid whitesmoke;
+    outline: none;
+    color: white;
+    font-size: 14px;
+    background: transparent;
+}
+
+.submit-btn {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    margin-top: -21px;
+    background: #F3C693;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+
+.check-box {
+    margin: 10px 10px 34px 0;
+}
+
+span {
+    color: whitesmoke;
+    font-size: 13px;
+    /* position: absolute; */
+}
+
+
+#register {
+    left: 450px;
+}
+
+#register-input {
+    color: white;
+    font-size: 15;
+}
+
+
+
+
+#services-container h1 {
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+    font-size: 2.1rem;
+    margin: auto;
+    margin-bottom: 13px;
+    width: 100%;
+    text-shadow: 2px 1px #bf671c;
+}
+
+#services-container {
+    width: 100%;
+    top: 631px;
+    height: 314px;
+    display: block;
+    position: absolute;
+
+    background-color: #5f4733;
+
+}
+
+#services {
+    /* display: flex;
+    align-items: center; */
+    color: #C5C5C5;
+    height: 312px;
+}
+
+.fa-map-marker-alt:before {
+    content: "\f3c5";
+    margin-right: 14px;
+    color: #a9721f;
+
+}
+
+footer div {
+    text-align: center;
+    display: block;
+    width: 100%;
+    position: fixed;
+    height: 23px;
+    background-color: #000000d9;
+    color: white;
+    bottom: -1px;
+    padding-top: 5px;
+
+}
+
+#mrg2 {
+    top: -36px;
+}
+
+/* #mrg1{
+    top: 28px;
+} */
+.box1 {
+    margin-left: 30px;
+    position: relative;
+    margin-bottom: 60px;
+    display: inline-block;
+    font-size: 18px;
+    list-style: none;
+    padding: 10px;
+}
+
+.box1 ul li {
+    padding: 9px;
+    list-style: none;
+}
+
+.fa-phone-alt:before {
+    color: #a9721f;
+    content: "\f879";
+    margin-right: 13px;
+}
+
+.box1 ul li a {
+
+    padding: 12px;
+    color: #a59191;
+
+}
+
+.fa-envelope:before {
+    margin-right: 12px;
+    content: "\f0e0";
+    color: #a9721f;
+
+}
+
+.clss {
+    background: transparent;
+    font-weight: bolder;
+    float: right;
+    border: none;
+    cursor: pointer;
+    margin-top: 4px;
+    margin-right: 7px;
+}
+
+.msg {
+    background-color: rgb(215, 243, 215);
+    height: 31px;
+    padding-top: 7px
+}

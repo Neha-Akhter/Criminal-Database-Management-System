@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}criminal management system{% endblock title %}</title>
+</head>
+
+<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+{% load static %}
+<link rel="stylesheet" href="{% static "crimestyle.css" %}">
+<link rel="stylesheet" href="{% static "responsive.css" %}" media="screen and (max-width:1140px)">
+
+
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <h4 class="heading">Crime Management System</h4>
+      <ul id="MenuItems">
+        <li class="item"><a href="#">Home</a></li>
+        <li class="item"><a href="#services">About us</a></li>
+        <li class="item"><a href="#services">Services</a></li>
+        <li class="item"><a href="#services">Contact Us</a></li>
+
+
+      </ul>
+    </nav>
+    {%if messages %}
+    {% for message in messages %}
+    <div class="msg alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+      <strong> {{message}}</strong>
+      <button type="button" class="clss btn-close" data-bs-dismiss="alert" aria-label="Close">X</button>
+
+    </div>
+    {%endfor%}
+    {%endif%}
+
+  </header>
+
+  <div class="full-page">
+  <h2 class="mmm">Register your complains here</h2>
+
+    <div class="input-group-register">
+
+      <form method="post" action="">
+        {% csrf_token %}
+        <input type='text' class='input-field' placeholder="Complainee First Name" name='complainee_fname' required>
+
+        <input type='text' class='input-field' placeholder="Complainee Last Name" name='complainee_lname' required>
+
+        <input type='text' class='input-field' placeholder="Gender" required>
+
+        <input type='email' class='input-field' placeholder="Email Id" required name="email_address">
+
+        <input type='number' class='input-field' placeholder="CNIC number" required name="complainee_cnic">
+
+        <input type='number' class='input-field' placeholder="Contact number" required name='complainee_contactno'>
+
+        <textarea class="input-field" name="crime_description" id="decs" placeholder="crime description" cols="10"
+          rows="3" name="crime_description"></textarea>
+
+        <textarea class="input-field" name="victim_description" id="decs" placeholder="Victim description" cols="10"
+          rows="3"></textarea>
+
+
+        <input type='checkbox' class='check-box'><span>By using SignUp I agree to all the terms and
+          conditions</span>
+        <button type="submit" class="submit-btn">Register</button>
+
+      </form>
+    </div>
+  </div>
+  <section id="services-container">
+    <div id="services">
+      <h1 class="h-primary">Our Services</h1>
+
+
+      <div id="mrg2" class="box1">
+        {% comment %} <h3>CONTACT US</h3> {% endcomment %}
+        <ul>
+
+          <li>
+            <h3 style="text-decoration: underline; padding-bottom:2px; margin-right: 15px;">Get In Touch</h3>
+          </li>
+          <li><i class="fas fa-envelope"></i>Email:<a
+              href="https://www.sindhpolice.gov.pk/">https://www.sindhpolice.gov.pk</a></li>
+          <li><i class="fas fa-phone-alt"></i>Madadgar 15 (Emergency Call)</li>
+          <li><i class="fas fa-map-marker-alt"></i>Central Police Office, I.I Chundrigar Road, Karachi, Pakistan</li>
+        </ul>
+
+      </div>
+      <div id="mrg1" class="box1">
+        <ul>
+          <li>
+            <h3 style="text-decoration: underline; padding-bottom:2px; margin-right: 15px;">Helpline Numbers</h3>
+          </li>
+          <li><i class="fas fa-phone-alt"></i>Edhi Welfare Centre <strong>241 3232</strong></li>
+          <li><i class="fas fa-phone-alt"> </i>Police Emergency <strong>15</strong></li>
+          <li><i class="fas fa-phone-alt"></i> Rescue Service <strong>1122</strong> </li>
+          <li><i class="fas fa-phone-alt"> </i>Edhi Ambulance <strong>115</strong> </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+
+  </div>
+
+
+
+
+  <footer>
+    <div>
+      Copyright &copy; www.crimemanagment.com All rights reserved
+    </div>
+  </footer>
+
+
+
+</body>
+
+</html>

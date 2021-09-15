@@ -1,0 +1,159 @@
+.popup .overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display: none;
+}
+
+.popup .content {
+    display: flex;
+    position: absolute;
+    border-radius: 7px;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #fff;
+    width: 50%;
+    max-width: 430px;
+    height: 155px;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.popup .close-btn {
+    cursor: pointer;
+    position: absolute;
+    right: 9px;
+    top: 8px;
+    width: 29px;
+    height: 26px;
+    color: black;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 19px;
+    text-align: center;
+    border-radius: 7px;
+}
+
+.popup.active .overlay {
+    display: block;
+}
+
+hr {
+    margin-top: 5px;
+}
+
+.popup.active .content {
+    transition: all 500ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.ok {
+    position: absolute;
+    left: 96px;
+    top: 103px;
+    width: 110px;
+}
+
+.cancel {
+    position: absolute;
+    top: 103px;
+    width: 110px;
+    left: 235px;
+}
+
+a button:hover {
+    background-color: #79776d;
+}
+
+.popup .contents{
+    position: absolute;
+    border-radius: 7px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #fff;
+    width: 50%;
+    max-width: 430px;
+    height: 469px;
+    z-index: 2;
+    /* text-align: center; */
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+.popup.active .contents {
+    transition: all 500ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+.popup .contents form{
+    margin-top: 60px;
+    position: absolute;
+    top: 1%;
+}
+.popup .contents h4{
+    text-align: center;
+}
+.popup .contents form .input-field{
+    padding: 2px;
+    width: 265px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size:14px;
+    margin: 9px 12px;
+}
+.save{
+    position: absolute;
+    left: 40px;
+    /* top: 103px; */
+    bottom: -63px;
+    width: 140px;
+}
+.dontsave{
+    position: absolute;
+    /* top: 189px; */
+    width: 110px;
+    left: 221px;
+    bottom: 24px;
+    width: 126px;
+
+}
+.add {
+    left: 24px;
+    font-size: 16px;
+    position: absolute;
+    padding-left: 13px;
+    top: 75px;
+    border: 1px solid black;
+    color: black;
+    border-radius: 5px
+}
+.download{
+    
+    left: 200px;
+    position: absolute;
+    padding-left: 13px;
+    top: 75px;
+    font-size: 16px;
+    border: 1px solid black;
+    color: black;
+    border-radius: 5px
+}
+.fa-download:before {
+    content: "\f019";
+    padding-left: 7px;
+}
+.report {
+    font-size: 16px;
+    margin-left: 11px;
+    position: absolute;
+    top: 84px;
+    font-weight: bold;
+    right: 33px;
+}

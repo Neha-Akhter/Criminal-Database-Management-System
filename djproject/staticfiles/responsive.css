@@ -1,0 +1,50 @@
+.navbar{
+    flex-direction: column;
+    height: 66px;
+    margin:0px;
+}
+#navbar ul li a{
+    
+    font-size: 10px;
+    padding: 0px 0px;
+    padding-bottom: 8px;
+}
+.heading{
+    margin-bottom: 6px;
+    margin-top: 3px;
+    font-size: 15px;
+}
+.loginbutton{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.input-group-register{
+    width: 267px;
+}
+.input-field{
+    width:225px;
+    padding: 7px;
+    margin-left: 20px;
+}
+.check-box {
+    position: relative;
+    top: 4px;
+    left: 25px;
+    float: left;
+}
+.submit-btn {
+    margin-top: 12px;
+    width: 55%;
+ 
+}
+
+span {
+    color: whitesmoke;
+    font-size: 13px;
+    position: relative;
+    top: 9px;
+    text-align: center;
+    width: -11px;
+    margin: 22px;
+}

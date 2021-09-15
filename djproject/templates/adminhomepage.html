@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    {%load static%}
+    <link rel="stylesheet" href="{% static "adminhomecss.css" %}">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand">Criminal Database</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <form class="navitems d-flex" method="post" action="/logoutuser">
+                {% csrf_token %}
+                
+                    <button class=" btn btn-outline-success" type="submit">logout</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="maincontainer">
+
+        <div class="col inrow">
+            <div class="card shadow-sm">
+                <header class="cardhead">
+                    <h5>
+                        Complain Records</h5>
+                    <i class="fas fa-paste"></i>
+                </header>
+                <div class="card-body">
+
+                    <p class="card-text"></p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a href="/complain_Rec" target=_blank><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col inrow">
+            <div class="card shadow-sm">
+                <header class="cardhead">
+                    <h5>
+                        Cases Records</h5>
+
+                    <i class="fas fa-paste"></i>
+                </header>
+                <div class="card-body">
+                    <p class="card-text"></p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                           <a href="/cases" target=_blank><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                            
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col inrow">
+            <div class="card shadow-sm">
+                <header class="cardhead">
+                    <h5>
+                        Criminal Records</h5>
+
+                    <i class="fas fa-paste"></i>
+                </header>
+                <div class="card-body">
+                    <p class="card-text"></p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a href="/criminals"target=_blank><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                          
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col inrow">
+            <div class="card shadow-sm">
+                <header class="cardhead">
+                    <h5>Workforce Records</h5>
+
+                    <i class="fas fa-paste"></i>
+                </header>
+                <div class="card-body">
+                    <p class="card-text"></p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a href="/workforce" target=_blank><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col inrow">
+            <div class="card shadow-sm">
+                <header class="cardhead">
+                    <h5>Suspect Records</h5>
+
+                    <i class="fas fa-paste"></i>
+                </header>
+                <div class="card-body">
+                    <p class="card-text"></p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                           <a href="/suspect_records" target=_blank><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                          
+                        </div>
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col inrow">
+            <div class="card shadow-sm">
+                <header class="cardhead">
+                    <h5>Prisoner Records</h5>
+
+                    <i class="fas fa-paste"></i>
+                </header>
+                <div class="card-body">
+                    <p class="card-text"></p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                           <a href="/prisoners" target=_blank><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                          
+                        </div>
+             
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col inrow">
+            <div class="card shadow-sm">
+                <header class="cardhead">
+                    <h5>Designations</h5>
+
+                    <i class="fas fa-paste"></i>
+                </header>
+                <div class="card-body">
+                    <p class="card-text"></p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                           <a href="/designations" target=_blank><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                          
+                        </div>
+             
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+{%load widget_tweaks%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    </script>
+
+
+
+    <style>
+        .form-group {
+            position: absolute;
+
+            display: inline-block;
+            width: 411px;
+
+            padding: 10px;
+            left: 10%;
+        }
+
+        .heads {
+            margin-top: 23px;
+            margin-left: 20px;
+            font-size: calc(1.3rem + .6vw);
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            margin: 10px;
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid black;
+            font-family: monospace;
+            font-size: 17px;
+            display: flex;
+            padding: 3px;
+        }
+
+        label {
+            display: inline-block;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+
+        .btn-primary {
+            color: #fff;
+            width: 157px;
+            font-size: 18px;
+            position: absolute;
+            bottom: -50px;
+            font-family: system-ui;
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }
+
+
+        #id_FIR_status {
+            position: absolute;
+            bottom: 3px;
+            right: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 class="heads">Edit Record</h3>
+    <hr>
+
+    <form method="post" action="">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="complainee_fname">Complainee First name</label>
+            {{form.complainee_fname}}
+
+            <label for="complainee_fname">Complainee last name</label>
+            {{form.complainee_lname}}
+
+            <label for="complainee_fname">Complainee CNIC</label>
+            {{form.complainee_cnic}}
+
+            <label for="complainee_fname">Complainee contactNo</label>
+            {{form.complainee_contactno}}
+
+            <label for="complainee_fname">Email Address</label>
+            {{form.email_address}}
+
+            <label for="complainee_fname">crime description</label>
+            {{form.crime_description}}
+
+            <label for="complainee_fname">Victim description</label>
+            {{form.victim_description}}
+
+            <label for="complainee_fname">Date of complain</label>
+            {{form.dateofcomplain}}
+
+            <label for="complainee_fname">Time of complain </label>
+            {{form.timeofcomplain}}
+
+            {% if val %}
+            <label for="complainee_fname">FIR status</label>
+
+            {{form.FIR_status}}
+            {%endif%}
+
+            <button type="submit" class="btn btn-primary save">Save
+                Changes</button>
+        </div>
+
+    </form>
+
+
+
+
+</body>
+
+
+</html>

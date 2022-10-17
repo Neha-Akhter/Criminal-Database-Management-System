@@ -31,6 +31,8 @@ class Designations(models.Model):
 
 
 class Work_force(models.Model):
+    
+    
     officer = models.AutoField(primary_key=True)
     Officerfname = models.CharField(max_length=20)
     Officerlname = models.CharField(max_length=20)
@@ -49,6 +51,8 @@ class Work_force(models.Model):
 
 
 class CasesRecord(models.Model):
+    
+    
     case_id = models.AutoField(primary_key=True)
     complain_id = models.OneToOneField(ComplainReg, on_delete=CASCADE)
     officer = models.ForeignKey(Work_force, on_delete=CASCADE, default=None)
@@ -73,6 +77,7 @@ class SuspectRecord(models.Model):
 
 
 class CriminalRecord(models.Model):
+    
 
     criminal_ID = models.AutoField(primary_key=True)
     CNIC = models.ForeignKey(SuspectRecord, on_delete=CASCADE)
@@ -82,6 +87,8 @@ class CriminalRecord(models.Model):
 
 
 class PrisonerRecord(models.Model):
+    
+    
     Prisoner_id = models.AutoField(primary_key=True)
     criminal_ID = models.ForeignKey(CriminalRecord, on_delete=CASCADE)
     DateOfTransfer = models.DateField()
